@@ -13,12 +13,12 @@ var spawner = {
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
         var defenders = _.filter(Game.creeps, (creep) => creep.memory.role == 'defender');
-        var tarMiners = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarMiner');
-        var tarCarriers = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarCarrier');
-        var tarUpgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarUpgrader');
-        var tarBuilders = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarBuilder');
-        var tarDefenders = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarDefender');
-        var remBuilders = _.filter(Game.creeps, (creep) => creep.memory.role == 'remBuilder');
+//        var tarMiners = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarMiner');
+//        var tarCarriers = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarCarrier');
+//        var tarUpgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarUpgrader');
+//        var tarBuilders = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarBuilder');
+//        var tarDefenders = _.filter(Game.creeps, (creep) => creep.memory.role == 'tarDefender');
+//        var remBuilders = _.filter(Game.creeps, (creep) => creep.memory.role == 'remBuilder');
         
         var claimers = _.filter(Game.creeps, (creep) => creep.memory.role == 'claimer');
         
@@ -49,6 +49,7 @@ var spawner = {
             console.log('Spawning new defender MarSara: ' + newName);
         }
         
+        /*
         if(tarMiners.length < minersPerRoom) {
             var harvPoint = _.filter(Game.creeps, (creep) => ((creep.memory.role == 'tarMiner') && (creep.memory.enSource == 0)));
             if(harvPoint.length < 1) {
@@ -71,7 +72,6 @@ var spawner = {
             var newName = Game.spawns.Tarsonis.createCreep([WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE], undefined, {role: 'tarBuilder'});
             console.log('Spawning new builder Tarsonis: ' + newName);
         }
-        /*
         if(tarDefenders.length < defendersPerRoom) {
             var newName = Game.spawns.Tarsonis.createCreep([MOVE,MOVE,RANGED_ATTACK,ATTACK,ATTACK,ATTACK,RANGED_ATTACK,TOUGH,TOUGH,TOUGH,MOVE,MOVE,RANGED_ATTACK,ATTACK,ATTACK,ATTACK,RANGED_ATTACK,TOUGH,TOUGH,TOUGH], undefined, {role: 'tarDefender'});
             console.log('Spawning new defender Tarsonis: ' + newName);
